@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="wid1dth=device-width, initial-scale=1.0">
+  <title>The Patriot</title>
+  <style>
+  body {
+    font-family: sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+}
+
+body::before {
+    top: 150px;
+    left: 150px;
+    background: radial-gradient(circle, rgba(180, 126, 45, 0.8), rgba(255, 204, 128, 0));
+}
+
+body::after {
+    bottom: -50px;
+    right: -50px;
+    background: radial-gradient(circle, rgba(180, 126, 45, 0.8), rgba(255, 204, 128, 0));
+}
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .the-patriot h1{
+        position: absolute;
+        left: 88px;
+        top: 80px;
+        width: 170px;
+        height: 33px;
+        font-size: 25.62px;
+        font-family: 'Playfair Display', serif;
+        color: #F9DBB3;
+        font-weight: normal;
+
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  nav {
+    position: absolute;
+    top: 80px;
+    right: 88px;
+    display: flex;
+    gap: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #3b3b3b;
+  }
+  
+  a {
+    color: #808080;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #d29f1b;
+    transform: scale(1.05);
+    transition: color 0.3s;
+  }
+
+  a.active{
+    color:#d29f1b;
+    transform: scale(1.05);
+  }
+
+  .menu-button {
+    background-color: #444;
+    color: #f0e68c;
+    border: 2px solid #d29f1b;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+
+  .menu-button:hover {
+    background-color: #d29f1b;
+    color: #444;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+  .education-nav {
+    font-family: Garamond, serif;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+button {
+    background-color: transparent;
+    color: #d29f1b;
+    border: 1px solid;
+    padding: 10px 40px;
+    border-radius:20px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #d29f1b;
+    color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button.active {
+    background-color: #d29f1b;
+    color: #000000;
+    border: 2px solid #d29f1b;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+  .title-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  flex: 1;
+  background-color: transparent;
+  border-radius: 1px solid #808080;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.title:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #d29f1b;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+  flex: 1;
+  padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 270px; /* Add this */
+    height: 500px; /* Add this */
+}
+
+.description:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.description p {
+  font-family: 'transmetals Regular';
+  margin-top: 20px;
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.5;
+}
+  
+.menu-icon {
+    display: none;
+}
+  
+@media (max-width: 768px) {
+.content {
+    grid-template-columns: 1fr;
+}
+}
+.menu-icon {
+    display: block;
+    cursor: pointer;
+}
+
+.blurred {
+    filter: blur(5px);
+}
+
+.back-button {
+  position: absolute;
+  top: 60%;
+  left: 50px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.back-button button {
+  background-color: #808080;
+  color: #000000;
+  border: none;
+  padding: 10px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.back-button button:hover {
+  background-color: #444;
+  color: #f0e68c;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+        <div class="the-patriot">
+      <h1>THE PATRIOT</h1></div>
+      <nav>
+        <a href="../landing-page/example.html">Home</a>
+        <a class="active" href="#">His Education</a>
+        <a href="../life/rizal.html">
+        <div class="menu-button">←</div>
+        </a>
+        <a href="../life/novel.html">
+        <div class="menu-button">→</div>
+        </a>
+      </nav>
+    </header>
+    <main>
+        <div class="education-nav">
+            <a href="EarlyEduc.html"><button>Early Education</button></a>
+            <a href="ADM.html"><button>Ateneo de Manila</button></a>
+            <a href="UST.html"><button>University of Sto. Tomas</button></a>
+            <a href="ABROAD.html"><button class="active">Studies Abroad</button></a>
+          </div>
+          <div class="content">
+            <div class="title-description">
+              <div class="title">
+                <h2>Rizal at Academia de San Fernando</h2>
+                </div>
+              <div class="description">
+                <p>Rizal also studied fine arts and sculpture in addition to his literary pursuits. In his leisure time, Rizal went to lectures and saw plays. He later proceeded with his ophthalmology studies in Paris. Leading French ophthalmologist of the time, Dr. Loius de Wecker, employed him as an assistant in his clinic. Four months later, he picked up the medical procedures for eye surgeries.
+                    <br><br>To study more about eye diseases and because of his low livelihood, Rizal traveled to Germany, where living expenses were lower. He worked at Heidelberg under the direction of well-known German physician Dr. Otto Becker, the hospital director.</p>
+              </div>
+            </div>
+            <div class="back-button">
+                <a href="Abroad2.html"><button>&#8592;</button></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>         
+</body>
+</html>
